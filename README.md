@@ -9,9 +9,6 @@ Requirements:
  -  git
 
 
-Periodic tasks
------
-
 Create virtualenv
 ```
     virtualenv -p ~/.pyenv/versions/3.4.2/bin/python venv
