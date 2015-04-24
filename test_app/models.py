@@ -8,11 +8,12 @@ class Doctor(models.Model):
 	
 
 	class Meta:
-        verbose_name = 'Врач'
-        verbose_name_plural = 'Врачи'
+		verbose_name = 'Врач'
+		verbose_name_plural = 'Врачи'
 
-    def __str__(self):
-        return self.name
+	def __str__(self):
+		return '{0} - {1}'.format(self.name, self.specialty)
+		 
 
 
 class Application(models.Model):
@@ -34,9 +35,9 @@ class Application(models.Model):
 	date_of_receipt = models.DateField(verbose_name=u"Дата приема")
 	time_of_receipt = models.IntegerField(verbose_name='Время приема', choices=TIME)
 
-		class Meta:
-	        verbose_name = 'Пациент'
-	        verbose_name_plural = 'Пациенты'
+	class Meta:
+		verbose_name = 'Заявка'
+		verbose_name_plural = 'Заявки'
 
-	    def __str__(self):
-	        return self.name_pacient
+	def __str__(self):
+		return self.name_pacient

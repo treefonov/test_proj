@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap3',
+    'widget_tweaks',
     'test_app',
 )
 
@@ -105,9 +105,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/dima/test_proj/test_proj/static_collect/'
+STATIC_ROOT = '/home/kate/www/test_proj/test_proj/static_collect/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "test_proj", "static"),
-    '/home/dima/test_proj/test_proj/static/',
+    '/home/kate/www/test_proj/test_proj/static/',
 )

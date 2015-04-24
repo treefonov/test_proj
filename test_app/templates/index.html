@@ -1,3 +1,35 @@
 {% extends 'base.html' %}
+
+ {% block scrjs %}
+
+ {% endblock %}
+
 {% block content %}
+	<form action="{% url 'home' %}" method="post" role="form" class="form-horizontal">
+	{% csrf_token %}
+	
+		{% for field in form.visible_fields %}
+		{% load widget_tweaks %}
+		<div class="form-group">
+			{{ field.errors }}
+			<label for="{{ field.id_for_label }}" class="col-sm-3 control-label">{{ field.label }}</label>
+			{{ field|add_class:"form-control" }}
+		</div>
+		{% endfor %}
+		<div class="form-group">
+			<div class="col-sm-offset-8">
+				<button type="submit" class="btn btn-success">Записаться</button>
+			</div>
+		</div>
+	</form>
+	<div id="fi"></div>
+	{{ time_list }}
+	{%  if message %}
+		<div class="alert alert-success">
+			{{message}} <a href="{% url 'home' %}">Добавить новую заявку</a>
+		</div>
+	{% endif %}
+<script type="text/javascript">
+var url = "{% url 'time' %}" </script>
 {% endblock %}
+
