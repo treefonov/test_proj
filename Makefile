@@ -6,6 +6,3 @@ pep8:
 
 pyflakes:
 	pylama --skip=*migrations* -l pyflakes test_app/
-
-test:
-	venv/bin/python manage.py test test_app -v 2

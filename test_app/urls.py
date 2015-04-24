@@ -1,5 +1,4 @@
-from django.conf.urls import include, url
-from django.contrib import admin
+from django.conf.urls import url
 import test_app.views as views
 
 urlpatterns = [
