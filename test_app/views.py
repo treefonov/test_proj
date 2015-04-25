@@ -13,7 +13,9 @@ def home(request):
         form = ApplicationForm(request.POST)
         if form.is_valid():
             form.save()
-            message = u'Запись к врачу оформлена успешно!'
+            appl = Application.objects.latest('id')
+            message = u'{0}, запись к врачу оформлена успешно! Врач: {1}, дата: {2}, время: {3} часов'.format(
+                appl.name_pacient, appl.doctor, appl.date_of_receipt, appl.time_of_receipt)
             return render(request, 'index.html', {'form': form, 'message': message, })
     return render(request, 'index.html', {'form': form})
 

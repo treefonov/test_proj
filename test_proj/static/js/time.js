@@ -1,6 +1,6 @@
 $( document ).ready(function() {
    $("#id_time_of_receipt").empty();
-					
+
    $("#id_date_of_receipt, #id_doctor").change(function() {
    		$("#id_time_of_receipt").empty();
    		var date = $('#id_date_of_receipt').val();
@@ -15,9 +15,11 @@ $( document ).ready(function() {
 					$('#id_time_of_receipt')
 				        .append($("<option></option>")
 					    .attr("value",k)
-					    .text(response[k])); 
+					    .text(response[k]));
 					}
-
+					if ($.isEmptyObject(response)) {
+						    $("#id_time_of_receipt").append('<option value="" disabled selected>Свободного времени нет </option>');
+						}
                }
 		   });
 		}

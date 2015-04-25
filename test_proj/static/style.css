@@ -18,6 +18,10 @@ form {
 	background-color: rgb(234, 237, 234);
 }
 
+.errorlist li{
+    color:#FF0000;
+    list-style-type: none;
+}
 .alert{
     margin:25px auto 0;
     padding: 15px 0 0 10px;
